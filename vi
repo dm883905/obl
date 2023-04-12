@@ -1,0 +1,55 @@
+// runoutput
+
+// Copyright 2009 The Go Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
+
+// Generate test of 64-bit arithmetic.
+// Most synthesized routines have different cases for
+// constants vs variables and even the generated code has
+// different cases for large and small constants,
+// so try a good range of inputs.
+
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
+
+var bout *bufio.Writer
+
+// 64-bit math without using 64-bit numbers,
+// so that we can generate the test program even
+// if the compiler has buggy or missing 64-bit support.
+
+type Uint64 struct {
+	hi	uint32
+	lo	uint32
+}
+
+type Int64 struct {
+	hi	int32
+	lo	uint32
+}
+
+func (a Uint64) Int64() (c Int64) {
+	c.hi = int32(a.hi)
+	c.lo = a.lo
+	return
+}
+
+func (a Uint64) Cmp(b Uint64) int {
+	switch {
+	case a.hi < b.hi:
+		return -1
+	case a.hi > b.hi:
+		return 1
+	case a.lo < b.lo:
+		return -1
+	case a.lo > b.lo:
+		return 1
+	}
+	return 0
+}
