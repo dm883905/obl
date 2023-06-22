@@ -42,7 +42,7 @@ F2	Rename item, set, etc.
 E	On an equipped item will open it on the edit menu on the right.
 Ctrl + LMB	Enable / disable gems
 Ctrl + RMB	Enable / disable gems from Full DPS
-Mouse 4/5	Undo / Redo path respectively (in build selection menu)
+Mouse 4/5	Undo / Redo path respectively (In build selection menu)
 Shift	While scrolling on a slider makes it 5* times faster
 Ctrl	While scrolling on a slider makes it 5* times slower
 * default of 5, some scroll bars have more or less extreme modifiers to scroll speed
