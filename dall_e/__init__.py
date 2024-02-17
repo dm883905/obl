@@ -1,7 +1,6 @@
 import io, requests
 import torch
 import torch.nn as nn
-
 from dall_e.encoder import Encoder
 from dall_e.decoder import Decoder
 from dall_e.utils   import map_pixels, unmap_pixels
