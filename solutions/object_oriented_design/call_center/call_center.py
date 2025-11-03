@@ -120,3 +120,16 @@ class CallCenter(object):
 
     def dispatch_queued_call_to_newly_freed_employee(self, call, employee):
         pass
+from .json_pipeline_cache import JsonPipelineCache
+from .load_cache import load_cache
+from .memory_pipeline_cache import InMemoryCache
+from .noop_pipeline_cache import NoopPipelineCache
+from .pipeline_cache import PipelineCache
+
+__all__ = [
+    "InMemoryCache",
+    "JsonPipelineCache",
+    "NoopPipelineCache",
+    "PipelineCache",
+    "load_cache",
+]
